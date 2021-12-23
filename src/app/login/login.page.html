@@ -1,0 +1,47 @@
+<ion-header>
+</ion-header>
+<ion-content class="background">
+  <ion-grid>
+    <ion-row class="container">
+      <ion-col class="card-right">
+        <ion-card class="card-border ion-padding ion-no-margin card-size card-background">
+          <ion-card-header class=" ion-text-center ">
+            <ion-card-title>
+              <h1 class="h-color">
+                Login
+              </h1>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <ion-label>Email</ion-label>
+            <ion-item color="light">
+              <ion-icon class="ion-padding-end" size="small" name="person-outline"></ion-icon>
+              <ion-input class="ion-input-placeholder" placeholder=" Type your Email" type="text"
+                formControlName="email" clearInput></ion-input>
+            </ion-item>
+            <ion-label>Password</ion-label>
+            <ion-item color="light">
+              <ion-icon class="ion-padding-end" size="small" name="lock-closed-outline"></ion-icon>
+              <ion-input class="ion-input-placeholder" placeholder=" Type your password" type="password"
+              formControlName="password" clearInput>
+              </ion-input>
+            </ion-item>
+            <ion-label>
+              <a class=" ion-margin-top" href="">Forgot password?</a>
+            </ion-label>
+            <ion-button [routerLink]="['/profile']" (click)="login()" type="submit" class="button-gradient ion-button ion-margin-top " expand="block"
+              shape="round">
+              LOGIN
+            </ion-button>
+            <ion-label class="orSignup ">Don't have an account yet?</ion-label>
+            <ion-button [routerLink]="['/signup']" expand="block" fill="outline" shape="round" class="signup" color="light">
+              SIGN UP
+            </ion-button>
+          </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
